@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>AF Brush</title>
+  <style>
+    html{
+      max-height: 90vh;
+    }
+    body{
+      box-sizing: border-box;
+      max-height: 90vh;
+    }
+    #c{
+      border: 2px solid black;
+      border-radius: 12px;
+      margin: 0 auto;
+      height: 80vh;
+      width: 100%
+    }
+    .logo {
+    margin: 0 auto;
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 36px;
+    height: 72px;
+    padding-top: 20px;
+}
+  </style>
+</head>
+
+<body>
+  <img src="https://guesstheartist.netlify.com/img/af.png" alt="Logo" class="logo">
+  <div><canvas id='c'></canvas></div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src='js/pxglutils2.js'></script>
+  <script src='js/pxslabs.js'></script>
+  <script src='js/pxshaders.js'></script>
+  <script src='js/mbrush_webgl.js'></script>
+</body>
+
+</html>
