@@ -1,7 +1,7 @@
-		var c = document.getElementById('c');
+    	var c = document.getElementById('c');
 		c.width = $('#c').width();
-		c.height = $(document).height();
-		c.aspect = $(document).width()/$(document).height();
+		c.height = $('#c').height();
+		c.aspect = $('#c').width()/$('#c').height();
 		var fcount = 0,pcount=0;
 		var gl,program,cBB,camtex,grad,brush,softbrush;
 		var simpvs,basevs,basefs,xfadefs,shiftfs,testfs;
