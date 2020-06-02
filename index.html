@@ -14,13 +14,22 @@
   </head>
   <body>
     <style>
+      .top {
+        position: fixed;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        top: 1.3rem;
+      }
       canvas {
         /* margin: 0 auto; */
         position: absolute;
         width: 100%;
         height: 100%;
       }
-      .top {
+      .bottom {
         position: fixed;
         width: 100%;
         margin: 0 auto;
@@ -30,10 +39,16 @@
         bottom: 0;
       }
     </style>
+
+    <div class="top">
+      <img src="./images/af.png" alt="Logo" style="height: 3.6rem;">
+    </div>
+
     <div>
       <canvas id="c"></canvas>
     </div>
-    <div class="top">
+
+    <div class="bottom">
       <button
         type="reset"
         class="btn btn-primary btn-lg"
@@ -46,7 +61,7 @@
         Save
       </button>
 
-      
+
     </div>
 
     <script>
