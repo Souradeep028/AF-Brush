@@ -17,6 +17,7 @@
     <div class="top">
       <img src="./images/af.png" alt="Logo" style="height: 3.6rem;">
     </div>
+    
 
     <div>
       <canvas id="c"></canvas>
@@ -31,22 +32,40 @@
       >
         Clear
       </button>
-      <button type="reset" class="btn btn-primary btn-lg" style="margin: 4px;">
+      <button type="reset" class="btn btn-primary btn-lg" style="margin: 4px;" onclick="downloadCanvas()">
         Save
       </button>
-
-
+   
     </div>
 
-    <script>
-      
-    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      function downloadCanvas(){
+          let canvasImage = document.getElementById('c').toDataURL('image/png');
+          // this can be used to download any image from webpage to local disk
+          let xhr = new XMLHttpRequest();
+          xhr.responseType = 'blob';
+          xhr.onload = function () {
+              let a = document.createElement('a');
+              a.href = window.URL.createObjectURL(xhr.response);
+              a.download = 'image_name.jpg';
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              a.remove()
+            };
+            xhr.open('GET', canvasImage); // This is to download the canvas Image
+            xhr.send();
+          }
+
+    </script>
+
     <script src="js/pxglutils2.js"></script>
     <script src="js/pxslabs.js"></script>
     <script src="js/pxshaders.js"></script>
